@@ -31,7 +31,7 @@ class PayTest(object):
 
     def pay_via_card(self):
         data = {
-            'PBFPubKey': 'FLWPUBK-4e5f4e2fcb1ae7d6309e12652e00e8f6-X',
+            'PBFPubKey': 'FLWPUBK-xxxxxxxxxxxxxxxxxxxxx-X',
             "cardno": "4775750000424189",
             "cvv": "953",
             "expirymonth": "10",
@@ -48,7 +48,7 @@ class PayTest(object):
             "device_fingerprint": "69e6b7f0b72037aa8428b70fbe03986c"
         }
 
-        sec_key = 'FLWSECK-60006b13420ddbf2f7b7e58ad8942db5-X'
+        sec_key = 'FLWSECK-xxxxxxxxxxxxxxxxxxxxx-X'
 
         # hash the secret key with the get hashed key function
         hashed_sec_key = self.getKey(sec_key)
@@ -59,7 +59,7 @@ class PayTest(object):
 
         # payment payload
         payload = {
-            "PBFPubKey": "FLWPUBK-4e5f4e2fcb1ae7d6309e12652e00e8f6-X",
+            "PBFPubKey": "FLWPUBK-xxxxxxxxxxxxxxxxxxxxx-X",
             "client": encrypt_3DES_key,
             "alg": "3DES-24"
         }
