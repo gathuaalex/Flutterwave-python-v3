@@ -67,7 +67,7 @@ deprecation==2.1.0
 distlib==0.3.1
 distributed==2021.3.1
 dj-database-url==0.5.0
-Django==3.1.7
+Django==3.1.8
 djangocms-installer==2.0.0
 docutils==0.15.2
 entrypoints==0.3
