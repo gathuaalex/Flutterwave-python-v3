@@ -50,7 +50,7 @@ class SubAccount(RaveBase) :
         elif method == 'POST':
             response = requests.post(endpoint, headers=self.headers, data=json.dumps(data))
         elif method == 'PUT':
-            response = requests.put(endpoint, headers=self.headers)
+            response = requests.put(endpoint, headers=self.headers,data=json.dumps(data))
         elif method == 'PATCH':
             response = requests.patch(endpoint, headers=self.headers, data=json.dumps(data))
         else:
@@ -92,10 +92,10 @@ class SubAccount(RaveBase) :
         method = 'GET'
         return self._handleAccountStatusRequests("fetch-a -subaccount", endpoint, method, data = None)
 
-    def update(self, Subaccount_id, details):
-        if not id:
+    def update(self, subaccount_id, details):
+        if not subaccount_id:
             return "Plan id was not supplied. Kindly supply one"
-        endpoint = self._baseUrl + self._endpointMap["subaccount"]["update"]
+        endpoint = self._baseUrl + self._endpointMap["subaccount"]["update"] + "/" + str(subaccount_id)
         data = details
         method = 'PUT'
         return self._handleAccountStatusRequests("edit-subaccount", endpoint, method, data=data)
